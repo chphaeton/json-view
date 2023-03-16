@@ -1,5 +1,5 @@
 {
-  "name": "lu-publish",
+  "name": "json-view-lu",
   "repository": "git@github.com:chphaeton/json-view.git",
   "version": "0.1.0",
   "scripts": {
