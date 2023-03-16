@@ -1,0 +1,106 @@
+{
+    "OrgNo": null,
+    "OrgNos": [
+        null,
+        {},
+        {},
+        []
+    ],
+    "ss": false,
+    "sss": 0,
+    "ssss": "",
+    "s": "great",
+    "httpHeaderlist": [
+        {
+            "describe": "验证加密值 Md5(key+Timespan+SecretKey) 加密的32位大写字符串)",
+            "name": "Token",
+            "required": "是",
+            "type": "String"
+        },
+        {
+            "describe": "精确到秒的Unix时间戳",
+            "name": "Timespan",
+            "required": "是",
+            "type": "String"
+        }
+    ],
+    "httpQueryList": [
+        {
+            "describe": "应用APPKEY(应用详细页查询)",
+            "name": "key",
+            "required": "是",
+            "type": "String"
+        },
+        {
+            "describe": "搜索关键字（公司名、注册号",
+            "name": "keyword",
+            "required": "是",
+            "type": "String"
+        }
+    ],
+    "httpReturnList": [
+        {
+            "describe": "内部KeyNo",
+            "length": "32",
+            "name": "KeyNo",
+            "type": "String"
+        },
+        {
+            "describe": "企业名称",
+            "length": "128",
+            "name": "Name",
+            "type": "String"
+        }
+    ],
+    "jsonReturn": {
+        "bool": true,
+        "Result": {
+            "KeyNo": "xxxxxxxxxxxx",
+            "Name": "xxxxxxx公司",
+            "No": "xxxxxxxxxxxxxxx",
+            "BelongOrg": "xxxxxxxxxxxx管理局",
+            "OperId": "xxxxxxxxxxxxx",
+            "OperName": "xxx",
+            "StartDate": "1994-03-04 00:00:00",
+            "EndDate": "",
+            "Status": "注销",
+            "Province": "JS",
+            "UpdatedDate": "2021-12-17 12:34:53",
+            "CreditCode": "",
+            "RegistCapi": "xxxxxxxx",
+            "EconKind": "全民所有制",
+            "Address": "xxx",
+            "Scope": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "TermStart": "1994-03-04 00:00:00",
+            "TeamEnd": "",
+            "CheckDate": "2018-06-28 00:00:00",
+            "OrgNo": null,
+            "IsOnStock": "0",
+            "StockNumber": null,
+            "StockType": null,
+            "OriginalName": [],
+            "ImageUrl": "xxxxxxxxxxxxxxxxxxxxx",
+            "EntType": "0",
+            "RecCap": "xxxxxxxx",
+            "RevokeInfo": {
+                "CancelDate": "2018-06-28",
+                "CancelReason": "其他原因",
+                "RevokeDate": "",
+                "RevokeReason": ""
+            },
+            "Area": {
+                "Province": "江苏省",
+                "City": "苏州市",
+                "County": "苏州工业园区"
+            },
+            "AreaCode": "320571"
+        },
+        "Status": "200",
+        "Message": "【有效请求】查询成功",
+        "OrderNumber": "ECI2021123010294871571463"
+    },
+    "requestExample": "http://developer.center.wubba.cn/ECIV4/GetBasicDetailsByName?key=AppKey&keyword=XXXXXX",
+    "requestMode": "GET",
+    "supportFormat": "JSON",
+    "url": "http://developer.center.wubba.cn/ECIV4/GetBasicDetailsByName"
+}
