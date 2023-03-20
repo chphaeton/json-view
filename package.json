@@ -43,8 +43,5 @@
     "last 2 versions",
     "not dead"
   ],
-  "main": "lib/json-view.umd.min.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  }
+  "main": "lib/json-view.umd.min.js"
 }
