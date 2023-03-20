@@ -1,4 +1,6 @@
 import JsonView from './json-view/index'
+import generateJson from './json-view/src/generateJson'
+
 const components = [
     JsonView
 ]
@@ -19,3 +21,5 @@ export default {
     // 以下是具体的组件列表
     JsonView
 }
+
+export {generateJson}

@@ -6,6 +6,9 @@
 
 <script>
   import data from './data.json'
+  import {generateJson} from '../publish'
+
+  console.log("-> generateJson", generateJson);
 
   data.g1 = [undefined]
   data.g2 = [null]
