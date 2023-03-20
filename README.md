@@ -1,10 +1,10 @@
 # json-view
 
-import JsonView from 'json-view-lu'
-
-Vue.use(publish)
+    import JsonView from 'json-view-lu'
+    Vue.use(publish)
 
 // in component
+
     data(){
         return {
             data: {...}
