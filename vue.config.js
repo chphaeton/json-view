@@ -1,10 +1,11 @@
 module.exports = {
+    publicPath: '/json-view/',
     configureWebpack: {
-        devtool: 'source-map'
+        devtool: 'source-map',
     },
     // 强制内联CSS
     css: {
-        extract: false
+        extract: false,
     },
     // 扩展 webpack 配置，使 components 加入编译
     chainWebpack: config => {
@@ -19,5 +20,5 @@ module.exports = {
                 // 修改它的选项...
                 return options
             })
-    }
+    },
 }

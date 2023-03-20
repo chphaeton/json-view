@@ -6,12 +6,14 @@
            @mouseenter="mouseenter(dom)"
            @mouseleave="mouseenter(dom,'out')"
       >
-        <span class="tab" :style="{paddingLeft:16*dom.tab+'px'}"></span>
-        <span class="key" v-if="!dom.hideKey">
-        <span v-if="dom.hasChildren" @click="getFold(dom)">
-          <i class="plus" v-if="dom.fold"></i>
-          <i class="minus" v-else></i>
+        <!--        <div>||||||||-&gt;:{{Object.keys(dom)}}:&lt;-||||||||</div>-->
+        <span class="tab" :style="{paddingLeft:16*dom.tab+'px'}">
+          <span v-if="dom.hasChildren" @click="getFold(dom)">
+            <i class="plus" v-if="dom.fold"></i>
+            <i class="minus" v-else></i>
+          </span>
         </span>
+        <span class="key" v-if="!dom.hideKey">
         {{ dom.key }}</span>
         <span class="colon" v-if="dom.hasColon">:</span>
         <span class="value" :class="dom.type">{{ dom.fold ? dom.foldView : dom.value }}</span>
@@ -22,6 +24,7 @@
 </template>
 
 <script>
+  import generateJson from './generateJson'
 
   export default {
     data() {
@@ -30,15 +33,15 @@
       }
     },
     created() {
-      if (this.data) this.buildArr(this.data)
+      if (this.data) this.domArr = generateJson(this.data)
     },
     methods: {
-      buildArr(data, tab = 1, ftype) {
+      buildArr(data, tab = 1, fartherType) {
         const keys = Object.keys(data)
         // keys.sort()
         const domArr = []
         if (tab === 1) {
-          ftype = Array.isArray(data) ? 'array' : typeof data
+          fartherType = Array.isArray(data) ? 'array' : typeof data
         }
         for (let i = 0; i < keys.length; i++) {
           const key = keys[i]
@@ -49,8 +52,8 @@
             type = 'array'
           }
           const isObj = !isArr && type === 'object'
-          const dom = {tab, key: `"${key}"`, type, ftype, hasColon: true}
-          if (ftype === 'array') {
+          const dom = {tab, key: `"${key}"`, type, fartherType, hasColon: true}
+          if (fartherType === 'array') {
             dom.hideKey = true
             dom.hasColon = false
           }
@@ -147,6 +150,7 @@
         }
         for (let i = this.domArr.indexOf(dom) + 1; i < this.domArr.length; i++) {
           const item = this.domArr[i]
+          item.fold = dom.fold
           if (item.tab > dom.tab) {
             item.hide = dom.fold
           } else {
@@ -213,42 +217,42 @@
     padding: 0 3px;
   }
 
-  .key {
+  .tab {
     position: relative;
-  }
 
-  i {
-    font-style: normal;
-    position: absolute;
-    left: -16px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 1px solid #660E7A;
-    cursor: pointer;
-    width: 10px;
-    height: 10px;
-
-    &:before, &:after {
-      display: block;
-      width: 8px;
-      height: 2px;
-      background: #660E7A;
-      content: "";
+    i {
+      font-style: normal;
       position: absolute;
-      left: 50%;
+      right: 4px;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateY(-50%);
+      border: 1px solid #660E7A;
+      cursor: pointer;
+      width: 10px;
+      height: 10px;
+
+      &:before, &:after {
+        display: block;
+        width: 8px;
+        height: 2px;
+        background: #660E7A;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:after {
+        width: 2px;
+        height: 8px;
+      }
     }
 
-    &:after {
-      width: 2px;
-      height: 8px;
-    }
-  }
-
-  .minus {
-    &:after {
-      display: none;
+    .minus {
+      &:after {
+        display: none;
+      }
     }
   }
 }

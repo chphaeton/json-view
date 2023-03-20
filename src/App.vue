@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <!--    <img alt="Vue logo" src="./assets/logo.png">-->
-    <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
     <json-view :data="data"></json-view>
   </div>
 </template>
@@ -9,6 +7,11 @@
 <script>
   import data from './data.json'
 
+  data.g1 = [undefined]
+  data.g2 = [null]
+  data.g3 = [true]
+  data.g4 = ['3']
+  data.g5 = []
   export default {
     name: 'App',
     data() {
@@ -19,11 +22,5 @@
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
