@@ -5293,6 +5293,14 @@ json-stringify-safe@~5.0.1:
   resolved "https://registry.npmmirror.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
 
+json-view-lu@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/json-view-lu/-/json-view-lu-0.1.0.tgz#690b6838a4d96445301a8ae83bc6e59a1a9ea604"
+  integrity sha512-ItBYKcIFnEkye3krxz6mBQob8rDEn/BSY+RNZlE+Cw1IfWqlYTC6dUNTWkjmAhrORlHlQ2mvu984EUAKjUHUbQ==
+  dependencies:
+    core-js "^3.6.5"
+    vue "^2.6.11"
+
 json5@^0.5.0:
   version "0.5.1"
   resolved "https://registry.npmmirror.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"

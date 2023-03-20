@@ -9,3 +9,5 @@ vue.config.js
 babel.config.js
 *.map
 jsconfig.json
+.idea
+.vscode

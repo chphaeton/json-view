@@ -1,7 +1,7 @@
 {
   "name": "json-view-lu",
   "repository": "git@github.com:chphaeton/json-view.git",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -19,6 +19,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "json-view-lu": "^0.1.0",
     "less": "^4.1.3",
     "less-loader": "7.x",
     "vue-template-compiler": "^2.6.11"
@@ -41,5 +42,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "main": "lib/json-view.umd.min.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
 }

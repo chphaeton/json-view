@@ -1,24 +1,16 @@
-# lu-publish
+# json-view
 
-## Project setup
-```
-yarn install
-```
+import JsonView from 'json-view-lu'
+Vue.use(publish)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+// in component
+data(){
+    return {
+        data: {...}
+        // 或
+        data: [...]
+    }
+}
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+在template
+<json-view :data="data"></json-view>
