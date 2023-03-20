@@ -1,10 +1,8 @@
 # json-view
-
     import JsonView from 'json-view-lu'
     Vue.use(publish)
 
-// in component
-
+# 在component
     data(){
         return {
             data: {...}
@@ -13,6 +11,7 @@
         }
     }
 
-在template
-
+# 在template
     <json-view :data="data"></json-view>
+
+示例：https://chphaeton.github.io/json-view/
