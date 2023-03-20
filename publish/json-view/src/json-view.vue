@@ -6,7 +6,7 @@
            @mouseenter="mouseenter(dom)"
            @mouseleave="mouseenter(dom,'out')"
       >
-        <!--        <div>||||||||-&gt;:{{Object.keys(dom)}}:&lt;-||||||||</div>-->
+<!--        <div>||||||||-&gt;:{{ Object.keys(dom) }}:&lt;-||||||||</div>-->
         <span class="tab" :style="{paddingLeft:16*dom.tab+'px'}">
           <span v-if="dom.hasChildren" @click="getFold(dom)">
             <i class="plus" v-if="dom.fold"></i>
