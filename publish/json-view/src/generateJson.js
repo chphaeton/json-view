@@ -33,10 +33,12 @@ function buildArr(data, tab = 1, fartherType) {
         } else if (isArr) {
             dom.value = len ? '[' : '[]'
             dom.noComma = !!len
-            if (len === 1 && (item[0] === null || ['number', 'string', 'undefined', 'boolean'].includes(typeof item[0]))) {
-                dom.value = `${item[0]}`
-                dom.shortArr = true
-            }
+            dom.hasChildren = !!len
+            // if (len === 1 && (item[0] === null || ['number', 'string', 'undefined', 'boolean'].includes(typeof item[0]))) {
+            //     dom.value = `${item[0]}`
+            //     dom.shortArr = true
+            //     dom.type = dom.value
+            // }
         } else if (isObj) {
             dom.value = len ? '{' : '{}'
             dom.noComma = !!len
@@ -46,7 +48,7 @@ function buildArr(data, tab = 1, fartherType) {
             dom.value = data[key]
         }
         domArr.push(dom)
-        if (isArr && item.length > 1 || isObj && item && Object.keys(item).length) {
+        if (isArr && item.length || isObj && item && Object.keys(item).length) {
             dom.hasChildren = true
             domArr.push(...buildArr(item, tab + 1, type))
             if (isArr) {

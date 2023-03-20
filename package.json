@@ -1,7 +1,7 @@
 {
   "name": "json-view-lu",
   "repository": "git@github.com:chphaeton/json-view.git",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
