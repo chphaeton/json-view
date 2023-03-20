@@ -6,7 +6,7 @@
            @mouseenter="mouseenter(dom)"
            @mouseleave="mouseenter(dom,'out')"
       >
-<!--        <div>||||||||-&gt;:{{ Object.keys(dom) }}:&lt;-||||||||</div>-->
+        <!--        <div>||||||||-&gt;:{{ Object.keys(dom) }}:&lt;-||||||||</div>-->
         <span class="tab" :style="{paddingLeft:16*dom.tab+'px'}">
           <span v-if="dom.hasChildren" @click="getFold(dom)">
             <i class="plus" v-if="dom.fold"></i>
@@ -31,6 +31,11 @@
       return {
         domArr: [],
       }
+    },
+    watch: {
+      data(data) {
+        if (data) this.domArr = generateJson(data)
+      },
     },
     created() {
       if (this.data) this.domArr = generateJson(this.data)
